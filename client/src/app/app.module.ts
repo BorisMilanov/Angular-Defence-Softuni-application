@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { MoviesComponent } from './components/movies/movies.component';
 import { MoviesDetailsComponent } from './components/movies-details/movies-details.component';
 import { CardMoviesComponent } from './components/card-movies/card-movies.component';
-
+import {HttpClientModule} from '@angular/common/http' ;
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +16,8 @@ import { CardMoviesComponent } from './components/card-movies/card-movies.compon
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
