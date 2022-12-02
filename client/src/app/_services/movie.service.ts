@@ -9,16 +9,16 @@ import { Movie } from '../_models/movie';
   providedIn: 'root'
 })
 export class MovieService {
-  private API_URL: string = "http://api.tvmaze.com/search/shows?"
+  private API_URL: string = "http://api.tvmaze.com/search/shows?q"
   constructor(private http: HttpClient) { }
 
   getMovies(searchTerm: string): Observable<Movie[]> {
-    return this.http.get<ApiResponse>(`${this.API_URL}=${searchTerm}`).pipe(
+    return this.http.get<ApiResponse>(`https://api.tvmaze.com/search/shows?q=girls`).pipe(
       map(response => {
         return response.Search;
       }))
   }
   getMovie(id: string):Observable<Movie> {
-    return this.http.get<Movie>(`${this.API_URL}i=${id}`)
+    return this.http.get<Movie>(`https://api.tvmaze.com/search/shows?q=girls`)
   }
 }
